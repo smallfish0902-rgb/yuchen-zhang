@@ -7,72 +7,111 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* 這裡就是控制排版（CSS）的地方 */
+        /* 全域設定 */
         body {
             margin: 0;
             padding: 0;
-            /* 背景圖：請確保 GitHub 上有一張檔案叫 wolf.jpg，或是換成下方的範例圖片網址 */
-            wolf-image: url('wolf.jpg'); 
-            wolf-size: cover;
-            wolf-position: center;
-            wolf-attachment: fixed;
-            font-family: "Microsoft JhengHei", sans-serif;
+            /* 背景圖已更改為 wolf.jpg */
+            background-image: url('wolf.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
+        /* 中間白色卡片主體 */
         .main-content {
             background-color: white;
             width: 90%;
-            max-width: 800px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 850px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
             text-align: center;
             overflow: hidden;
+            border-radius: 8px; /* 增加一點圓角感 */
         }
 
+        /* 上半部藍紫色區塊 */
         .top-section {
-            background-color: #6a76d4; /* 你的藍紫色背景 */
-            padding: 40px 20px;
+            background-color: #6a76d4; 
+            padding: 50px 20px;
             color: white;
         }
 
         .top-section img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%; /* 讓頭像變圓形 */
-            border: 5px solid rgba(255,255,255,0.3);
+            width: 160px;
+            height: 160px;
+            border-radius: 50%; 
+            border: 6px solid rgba(255,255,255,0.2);
             object-fit: cover;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            background-color: #eee;
         }
 
-        .name { font-size: 24px; font-weight: bold; margin: 10px 0; }
-        .email, .mobile { font-size: 14px; margin: 5px 0; opacity: 0.9; }
+        .name { font-size: 28px; font-weight: bold; margin: 10px 0; letter-spacing: 2px; }
+        .email, .mobile { font-size: 15px; margin: 5px 0; opacity: 0.9; }
 
+        /* 中間社群列 */
         .middle-section {
-            background-color: #4a54a4; /* 深一點的藍色條 */
-            padding: 10px;
+            background-color: #4a54a4; 
+            padding: 12px;
         }
 
-        .social a { color: white; font-size: 20px; text-decoration: none; }
+        .social a { 
+            color: white; 
+            font-size: 24px; 
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        .social a:hover { opacity: 0.7; }
 
+        /* 下半部文字內容區塊 */
         .bottom-section {
             display: flex;
-            padding: 30px;
+            padding: 40px 30px;
             justify-content: space-around;
-            align-items: center;
+            align-items: flex-start;
             color: #333;
+            background-color: #fff;
         }
 
-        .bottom-section > div { flex: 1; padding: 0 15px; font-size: 14px; }
-        .bottom-section span { display: block; color: #777; margin-top: 5px; font-size: 13px; }
+        .bottom-section > div { 
+            flex: 1; 
+            padding: 0 25px; 
+            text-align: center;
+        }
 
+        .bottom-section strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .bottom-section span { 
+            display: block; 
+            color: #666; 
+            line-height: 1.6;
+            font-size: 15px; 
+        }
+
+        /* 中間的分隔線 */
         .border {
             width: 1px;
-            height: 50px;
-            wolf-color: #ddd;
+            height: 80px;
+            background-color: #eee;
             flex: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* 手機版適應 */
+        @media (max-width: 600px) {
+            .bottom-section { flex-direction: column; align-items: center; }
+            .border { width: 80%; height: 1px; margin: 20px 0; }
         }
     </style>
 </head>
@@ -99,13 +138,12 @@
                 <strong>企業管理系</strong>
                 <span>我是一名企業管理系學生，個性外向，對行銷與商業策略有興趣，未來希望進入高薪產業發展。</span>
             </div>
+            
             <div class="border"></div>
+            
             <div>
                 <strong>華碩</strong>
                 <span>軟體測試實習生</span>
             </div>
         </div>
     </div>
-
-</body>
-</html>
