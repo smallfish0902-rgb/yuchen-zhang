@@ -1,46 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>張宇宸的個人網頁</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* 這裡就是控制排版（CSS）的地方 */
+        body {
+            margin: 0;
+            padding: 0;
+            /* 背景圖：請確保 GitHub 上有一張檔案叫 background.jpg，或是換成下方的範例圖片網址 */
+            background-image: url('background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: "Microsoft JhengHei", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-<!-- saved from url=(0070)file:///Volumes/Seagate%20Bac/WenXuanDecode/trash/episode10/index.html -->
-        <!DOCTYPE html>
-        <html lang="zh-TW">
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-        </head>
-        <body>
-            
-        </body>
-        </html><link rel="stylesheet" href="./index_files/style.css">
-        <link rel="stylesheet" href="./index_files/all.css">
-    </head>
-    <body>
-        <div class="main-content">
-            <div class="top-section">
-                <img src="./index_files/elon.jpg" alt="個人頭像" loading="lazy">
-                <p class="name">張宇宸</p>
-                <p class="email">smallfish0902@gmail.com</p>
-                <p class="mobile">+0968259990</p>
-            </div>
-            <div class="middle-section">
-                <div class="social">
-                    <a href="https://www.facebook.com/profile.php?id=100025976374728"><i class="fab fa-facebook fa-fw"></i></a>
-                    
-                </div>
-            </div>
-            <div class="bottom-section">
-                <div>
-                    企業管理系
-                    <span>我是一名企業管理系學生，個性外向，對行銷與商業策略有興趣，
-            未來希望進入高薪產業發展。</span>
-                </div>
-                <div class="border"></div>
-                <div>
-                    華碩
-                    <span>軟體測試實習生
-                    </span>
-                </div>
+        .main-content {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .top-section {
+            background-color: #6a76d4; /* 你的藍紫色背景 */
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .top-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* 讓頭像變圓形 */
+            border: 5px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .name { font-size: 24px; font-weight: bold; margin: 10px 0; }
+        .email, .mobile { font-size: 14px; margin: 5px 0; opacity: 0.9; }
+
+        .middle-section {
+            background-color: #4a54a4; /* 深一點的藍色條 */
+            padding: 10px;
+        }
+
+        .social a { color: white; font-size: 20px; text-decoration: none; }
+
+        .bottom-section {
+            display: flex;
+            padding: 30px;
+            justify-content: space-around;
+            align-items: center;
+            color: #333;
+        }
+
+        .bottom-section > div { flex: 1; padding: 0 15px; font-size: 14px; }
+        .bottom-section span { display: block; color: #777; margin-top: 5px; font-size: 13px; }
+
+        .border {
+            width: 1px;
+            height: 50px;
+            background-color: #ddd;
+            flex: 0 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <div class="top-section">
+            <img src="elon.jpg" alt="個人頭像">
+            <div class="name">張宇宸</div>
+            <div class="email">smallfish0902@gmail.com</div>
+            <div class="mobile">+0968259990</div>
+        </div>
+
+        <div class="middle-section">
+            <div class="social">
+                <a href="https://www.facebook.com/profile.php?id=100025976374728" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
             </div>
         </div>
-    
-</body></html>
+
+        <div class="bottom-section">
+            <div>
+                <strong>企業管理系</strong>
+                <span>我是一名企業管理系學生，個性外向，對行銷與商業策略有興趣，未來希望進入高薪產業發展。</span>
+            </div>
+            <div class="border"></div>
+            <div>
+                <strong>華碩</strong>
+                <span>軟體測試實習生</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
