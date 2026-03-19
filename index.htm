@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>張宇宸的個人網頁</title>
+    <title>張宇宸 | 個人數位名片</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* 全域設定 */
+        /* 全域樣式設定 */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            /* 背景圖已更改為 wolf.jpg */
+            /* 背景圖設定為 wolf.jpg */
             background-image: url('wolf.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            background-color: #333; /* 如果圖片沒跑出來，至少有深色背景 */
             font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
             display: flex;
             justify-content: center;
@@ -23,21 +28,27 @@
             min-height: 100vh;
         }
 
-        /* 中間白色卡片主體 */
+        /* 中央白色卡片主體 */
         .main-content {
             background-color: white;
             width: 90%;
             max-width: 850px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
             text-align: center;
             overflow: hidden;
-            border-radius: 8px; /* 增加一點圓角感 */
+            border-radius: 12px;
+            animation: fadeIn 1s ease-in-out; /* 增加一個淡入小動畫 */
         }
 
-        /* 上半部藍紫色區塊 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 上半部藍色區塊 */
         .top-section {
             background-color: #6a76d4; 
-            padding: 50px 20px;
+            padding: 60px 20px;
             color: white;
         }
 
@@ -48,31 +59,34 @@
             border: 6px solid rgba(255,255,255,0.2);
             object-fit: cover;
             margin-bottom: 20px;
-            background-color: #eee;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        .name { font-size: 28px; font-weight: bold; margin: 10px 0; letter-spacing: 2px; }
-        .email, .mobile { font-size: 15px; margin: 5px 0; opacity: 0.9; }
+        .name { font-size: 30px; font-weight: bold; margin: 10px 0; letter-spacing: 3px; }
+        .email, .mobile { font-size: 15px; margin: 5px 0; opacity: 0.85; letter-spacing: 0.5px; }
 
-        /* 中間社群列 */
+        /* 中間深藍色社群列 */
         .middle-section {
             background-color: #4a54a4; 
-            padding: 12px;
+            padding: 15px;
         }
 
         .social a { 
             color: white; 
-            font-size: 24px; 
+            font-size: 26px; 
             text-decoration: none;
-            transition: 0.3s;
+            transition: transform 0.3s;
+            display: inline-block;
         }
         
-        .social a:hover { opacity: 0.7; }
+        .social a:hover { 
+            transform: scale(1.2); /* 滑鼠移上去圖示會變大 */
+        }
 
-        /* 下半部文字內容區塊 */
+        /* 下半部介紹區塊 */
         .bottom-section {
             display: flex;
-            padding: 40px 30px;
+            padding: 50px 40px;
             justify-content: space-around;
             align-items: flex-start;
             color: #333;
@@ -82,36 +96,40 @@
         .bottom-section > div { 
             flex: 1; 
             padding: 0 25px; 
-            text-align: center;
         }
 
         .bottom-section strong {
             display: block;
             font-size: 18px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #2c3e50;
+            border-bottom: 2px solid #6a76d4;
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
         .bottom-section span { 
             display: block; 
-            color: #666; 
-            line-height: 1.6;
+            color: #555; 
+            line-height: 1.8;
             font-size: 15px; 
+            margin-top: 10px;
         }
 
-        /* 中間的分隔線 */
+        /* 中間分隔線 */
         .border {
             width: 1px;
-            height: 80px;
+            height: 100px;
             background-color: #eee;
             flex: 0 !important;
             padding: 0 !important;
         }
 
-        /* 手機版適應 */
-        @media (max-width: 600px) {
-            .bottom-section { flex-direction: column; align-items: center; }
-            .border { width: 80%; height: 1px; margin: 20px 0; }
+        /* 手機版自動適應 */
+        @media (max-width: 650px) {
+            .bottom-section { flex-direction: column; align-items: center; padding: 30px; }
+            .border { width: 60%; height: 1px; margin: 30px 0; }
+            .bottom-section > div { padding: 0; }
         }
     </style>
 </head>
@@ -147,3 +165,6 @@
             </div>
         </div>
     </div>
+
+</body>
+</html>
