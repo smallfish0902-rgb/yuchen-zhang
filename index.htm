@@ -1,4 +1,159 @@
-<div class="middle-section">
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>張宇宸 | 個人數位名片</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* 全域樣式設定 */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            /* 背景圖設定為 wolf.jpg */
+            background-image: url('wolf.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: #1a1a1a; /* 圖片載入前的深色底色 */
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* 中央白色卡片主體 */
+        .main-content {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            text-align: center;
+            overflow: hidden;
+            border-radius: 16px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 上半部漸層區塊 */
+        .top-section {
+            background: linear-gradient(135deg, #6a76d4, #4a54a4); 
+            padding: 50px 20px;
+            color: white;
+        }
+
+        .top-section img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; 
+            border: 4px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .name { font-size: 30px; font-weight: bold; margin: 10px 0; letter-spacing: 3px; }
+        .contact-info { font-size: 15px; margin: 6px 0; opacity: 0.9; letter-spacing: 0.5px; }
+        .contact-info i { margin-right: 8px; width: 18px; }
+
+        /* 中間深色社群列 */
+        .middle-section {
+            background-color: #3d468f; 
+            padding: 15px;
+        }
+
+        .social a { 
+            color: white; 
+            font-size: 26px; 
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 0 20px;
+        }
+        
+        .social a:hover { 
+            transform: translateY(-5px);
+            color: #ffda79; /* 懸停時變換顏色增加互動感 */
+        }
+
+        /* 下半部介紹區塊 */
+        .bottom-section {
+            display: flex;
+            padding: 45px 40px;
+            justify-content: space-around;
+            align-items: stretch;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .bottom-section > div { 
+            flex: 1; 
+            padding: 0 25px; 
+        }
+
+        .bottom-section strong {
+            display: inline-block;
+            font-size: 19px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 3px solid #6a76d4;
+            padding-bottom: 5px;
+        }
+
+        .bottom-section span { 
+            display: block; 
+            color: #555; 
+            line-height: 1.8;
+            font-size: 15px; 
+            text-align: justify;
+        }
+
+        .target-company {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 12px;
+            display: block;
+        }
+
+        /* 中間垂直分隔線 */
+        .border {
+            width: 1px;
+            background-color: #eeeeee;
+            flex: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* 手機版自動適應佈局 */
+        @media (max-width: 650px) {
+            .bottom-section { flex-direction: column; align-items: center; padding: 30px; }
+            .border { width: 70%; height: 1px; margin: 30px 0; }
+            .bottom-section > div { padding: 0; width: 100%; }
+            .social a { margin: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <div class="top-section">
+            <img src="elon.jpg" alt="張宇宸 個人照">
+            <div class="name">張宇宸</div>
+            <div class="contact-info"><i class="fas fa-envelope"></i> smallfish0902@gmail.com</div>
+            <div class="contact-info"><i class="fas fa-mobile-alt"></i> +886 968 259 990</div>
+        </div>
+
+        <div class="middle-section">
             <div class="social">
                 <a href="https://www.facebook.com/profile.php?id=100025976374728" target="_blank" title="Facebook">
                     <i class="fab fa-facebook"></i>
@@ -13,3 +168,24 @@
                 </a>
             </div>
         </div>
+
+        <div class="bottom-section">
+            <div>
+                <strong>關於我</strong>
+                <span>
+                    企管系背景並具備資處科技術底子與電腦軟體證照。熟練使用 VS Code 與 GitHub 進行網頁部署與除錯。在燒肉店高壓環境磨練出極佳抗壓性與細心度，擅長邏輯推論並具備「追根究底」的除錯潛力，已準備好投入華碩 QA 團隊。
+                </span>
+            </div>
+            
+            <div class="border"></div>
+            
+            <div>
+                <strong>應徵目標</strong>
+                <span class="target-company">華碩電腦 (ASUS)</span>
+                <span>軟體測試實習生 (QA Intern)</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
