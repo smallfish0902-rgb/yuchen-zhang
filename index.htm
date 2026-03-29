@@ -15,8 +15,8 @@
         body {
             margin: 0;
             padding: 0;
-            /* 背景圖設定為 news-image_2.jpg */
-            background-image: url('news-image_2.jpg'); 
+            /* 背景圖已更新為 2160005_B_x8M7.jpg */
+            background-image: url('2160005_B_x8M7.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -30,16 +30,16 @@
 
         /* 中央半透明磨砂卡片主體 */
         .main-content {
-            background-color: rgba(255, 255, 255, 0.85); /* 半透明白色 */
-            backdrop-filter: blur(10px); /* 毛玻璃模糊效果 */
-            -webkit-backdrop-filter: blur(10px); /* 支援 Safari */
-            width: 90%;
+            background-color: rgba(255, 255, 255, 0.82); /* 稍微調低一點點亮度，讓文字更突出 */
+            backdrop-filter: blur(12px); /* 磨砂玻璃效果 */
+            -webkit-backdrop-filter: blur(12px); 
+            width: 95%;
             max-width: 800px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.45);
             text-align: center;
             overflow: hidden;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3); /* 邊框微光感 */
+            border-radius: 24px; /* 更加圓潤現代的圓角 */
+            border: 1px solid rgba(255, 255, 255, 0.3);
             animation: fadeIn 0.8s ease-out;
         }
 
@@ -48,9 +48,9 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 上半部漸層區塊 (稍微調低透明度) */
+        /* 上半部漸層區塊 */
         .top-section {
-            background: linear-gradient(135deg, rgba(106, 118, 212, 0.9), rgba(74, 84, 164, 0.9)); 
+            background: linear-gradient(135deg, rgba(106, 118, 212, 0.92), rgba(74, 84, 164, 0.92)); 
             padding: 50px 20px;
             color: white;
         }
@@ -67,11 +67,11 @@
 
         .name { font-size: 30px; font-weight: bold; margin: 10px 0; letter-spacing: 3px; }
         .contact-info { font-size: 15px; margin: 6px 0; opacity: 0.9; }
-        .contact-info i { margin-right: 8px; width: 18px; }
+        .contact-info i { margin-right: 8px; }
 
         /* 中間深色社群列 */
         .middle-section {
-            background-color: rgba(61, 70, 143, 0.9); 
+            background-color: rgba(61, 70, 143, 0.95); 
             padding: 15px;
         }
 
@@ -89,14 +89,14 @@
             color: #ffda79;
         }
 
-        /* 下半部介紹區塊 (背景改為透明) */
+        /* 下半部介紹區塊 */
         .bottom-section {
             display: flex;
             padding: 45px 40px;
             justify-content: space-around;
             align-items: stretch;
             color: #333;
-            background-color: transparent; /* 讓底色透出來 */
+            background-color: transparent; 
         }
 
         .bottom-section > div { 
@@ -115,7 +115,7 @@
 
         .bottom-section span { 
             display: block; 
-            color: #222; /* 稍微加深文字顏色確保在透明背景下清晰 */
+            color: #1a1a1a; 
             line-height: 1.8;
             font-size: 15px; 
             text-align: justify;
@@ -133,12 +133,12 @@
         /* 中間垂直分隔線 */
         .border {
             width: 1px;
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.08);
             flex: 0 !important;
             padding: 0 !important;
         }
 
-        /* 手機版自動適應佈局 */
+        /* 手機版適應佈局 */
         @media (max-width: 650px) {
             .bottom-section { flex-direction: column; align-items: center; padding: 30px; }
             .border { width: 70%; height: 1px; margin: 30px 0; }
@@ -174,19 +174,4 @@
             <div>
                 <strong>關於我</strong>
                 <span>
-                    企管系背景並具備資處科技術底子與電腦軟體證照。熟練使用 VS Code 與 GitHub 進行網頁部署與除錯。在燒肉店高壓環境磨練出極佳抗壓性與細心度，擅長邏輯推論並具備「追根究底」的測試潛力，已準備好投入華碩 QA 團隊。
-                </span>
-            </div>
-            
-            <div class="border"></div>
-            
-            <div>
-                <strong>應徵目標</strong>
-                <span class="target-company">華碩電腦 (ASUS)</span>
-                <span>軟體測試實習生 (QA Intern)</span>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+                    企管系背景並具備資處科技術底子與電腦軟體證照。熟練使用 VS Code 與 GitHub 進行網頁部署與除錯。在燒肉店高壓環境磨練出極佳抗壓
