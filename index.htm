@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* 全域樣式設定 */
         * {
             box-sizing: border-box;
         }
@@ -15,165 +14,101 @@
         body {
             margin: 0;
             padding: 0;
-            /* 背景圖設定：疊加一層半透明遮罩，讓背景不干擾文字閱讀 */
-            background: linear-gradient(rgba(44, 62, 80, 0.75), rgba(44, 62, 80, 0.75)), url('bg.jpg');
-            
-            /* 讓背景圖片完整覆蓋螢幕且固定 */
-            background-size: cover; 
+            /* 背景設定：如果 bg.jpg 沒跑出來，會顯示 background-color 的深藍色 */
+            background-color: #2c3e50; 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('bg.jpg');
+            background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-color: #2c3e50;
+            background-repeat: no-repeat;
             
-            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            font-family: "Microsoft JhengHei", sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
-        /* 中央白色卡片主體 */
+        /* 卡片主體 */
         .main-content {
             background-color: white;
             width: 90%;
             max-width: 800px;
-            box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             text-align: center;
+            border-radius: 15px;
             overflow: hidden;
-            border-radius: 20px;
-            animation: fadeIn 0.8s ease-out;
-            position: relative;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* 上半部漸層區塊 */
+        /* 上方藍色區塊 */
         .top-section {
             background: linear-gradient(135deg, #6a76d4, #4a54a4); 
-            padding: 60px 20px;
+            padding: 50px 20px;
             color: white;
         }
 
         .top-section img {
-            width: 140px;
-            height: 140px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%; 
-            border: 4px solid rgba(255,255,255,0.3);
+            border: 4px solid rgba(255,255,255,0.5);
             object-fit: cover;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 15px;
         }
 
-        .name { font-size: 32px; font-weight: bold; margin: 10px 0; letter-spacing: 3px; }
-        .contact-info { font-size: 14px; margin: 6px 0; opacity: 0.9; }
-        .contact-info i { margin-right: 8px; width: 16px; }
+        .name { font-size: 30px; font-weight: bold; margin: 10px 0; letter-spacing: 2px; }
+        .contact-info { font-size: 14px; margin: 5px 0; opacity: 0.9; }
 
-        /* 中間深色社群列 */
+        /* 中間社群連結列 */
         .middle-section {
             background-color: #3d468f; 
-            padding: 15px;
+            padding: 12px;
         }
 
         .social a { 
             color: white; 
-            font-size: 24px; 
+            font-size: 22px; 
+            margin: 0 20px;
             text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-            margin: 0 25px;
+            transition: 0.3s;
         }
         
-        .social a:hover { 
-            transform: translateY(-3px);
-            color: #ffda79;
-        }
+        .social a:hover { color: #ffda79; }
 
-        /* 下半部介紹區塊 */
+        /* 下方文字內容 */
         .bottom-section {
             display: flex;
-            padding: 50px 40px;
-            justify-content: space-around;
-            color: #333;
+            padding: 40px;
             background-color: #fff;
+            color: #333;
+            text-align: left;
         }
 
-        .bottom-section > div { 
-            flex: 1; 
-            padding: 0 25px; 
-        }
+        .section-box { flex: 1; padding: 0 15px; }
 
-        .bottom-section strong {
-            display: inline-block;
-            font-size: 19px;
-            margin-bottom: 15px;
+        .section-box strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
             color: #2c3e50;
-            border-bottom: 3px solid #6a76d4;
-            padding-bottom: 5px;
+            border-left: 4px solid #6a76d4;
+            padding-left: 10px;
         }
 
-        .bottom-section span { 
+        .section-box span { 
             display: block; 
             color: #555; 
-            line-height: 1.9;
-            font-size: 14.5px; 
-            text-align: justify;
+            line-height: 1.7;
+            font-size: 14px; 
         }
 
-        .target-company {
-            font-size: 20px;
+        .target-title {
+            font-size: 18px;
             font-weight: bold;
-            color: #2c3e50;
-            margin-top: 5px;
+            color: #4a54a4;
+            margin-bottom: 5px;
             display: block;
         }
 
-        /* 中間垂直分隔線 */
-        .border {
-            width: 1px;
-            background-color: #eeeeee;
-            flex: 0 !important;
-            padding: 0 !important;
-        }
-
-        /* 手機版自動適應佈局 */
-        @media (max-width: 650px) {
-            .bottom-section { flex-direction: column; padding: 30px; }
-            .border { width: 80%; height: 1px; margin: 30px auto; }
-            .bottom-section > div { padding: 0; width: 100%; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="main-content">
-        <div class="top-section">
-            <img src="elon.jpg" alt="張宇宸 個人照">
-            <div class="name">張宇宸</div>
-            <div class="contact-info"><i class="fas fa-envelope"></i> smallfish0902@gmail.com</div>
-            <div class="contact-info"><i class="fas fa-mobile-alt"></i> +886 968 259 990</div>
-        </div>
-
-        <div class="middle-section">
-            <div class="social">
-                <a href="https://www.facebook.com/profile.php?id=100025976374728" target="_blank" title="Facebook">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/yuchen09_18/" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://github.com/" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="bottom-section">
-            <div>
-                <strong>關於我</strong>
-                <span>
-                    您好，我是宇宸！簡單來說，我是一個「愛挑戰」的人。
-                    雖然我現在讀企管，但我高中是讀資處的，所以電腦操作對我來說非常簡單。
-                    
-                    我平常除了打工，剩下的時間我最
+        /* 手機版排版切換 */
+        @media
