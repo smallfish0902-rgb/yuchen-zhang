@@ -15,19 +15,14 @@
         body {
             margin: 0;
             padding: 0;
-            /* 背景圖設定 */
-            background-image: url('下載.jpg'); 
+            /* 背景圖設定：使用 linear-gradient 疊加一層半透明遮罩，讓背景變暗，視覺更高級 */
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('下載.jpg');
             
-            /* 調整背景圖大小的關鍵：
-               1. 300px: 手動指定寬度，你可以改成 200px (更小) 或 500px (更大)
-               2. repeat: 讓圖片重複排列鋪滿螢幕
-            */
-            background-size: 300px; 
-            background-repeat: repeat; 
-            
-            background-position: top left;
+            /* cover 會讓圖片填滿整個螢幕，不會有重複的小圖感 */
+            background-size: cover; 
+            background-position: center;
             background-attachment: fixed;
-            background-color: #f4f4f4; /* 圖片未載入前的淺灰色背景 */
+            
             font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
             display: flex;
             justify-content: center;
@@ -40,10 +35,10 @@
             background-color: white;
             width: 90%;
             max-width: 800px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+            box-shadow: 0 30px 70px rgba(0,0,0,0.5); /* 加深陰影，讓卡片更有浮起來的感覺 */
             text-align: center;
             overflow: hidden;
-            border-radius: 16px;
+            border-radius: 20px; /* 圓角稍微加強 */
             animation: fadeIn 0.8s ease-out;
             position: relative;
         }
@@ -56,7 +51,7 @@
         /* 上半部漸層區塊 */
         .top-section {
             background: linear-gradient(135deg, #6a76d4, #4a54a4); 
-            padding: 50px 20px;
+            padding: 60px 20px;
             color: white;
         }
 
@@ -70,14 +65,14 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        .name { font-size: 30px; font-weight: bold; margin: 10px 0; letter-spacing: 3px; }
+        .name { font-size: 32px; font-weight: bold; margin: 10px 0; letter-spacing: 3px; }
         .contact-info { font-size: 14px; margin: 6px 0; opacity: 0.9; }
         .contact-info i { margin-right: 8px; width: 16px; }
 
         /* 中間深色社群列 */
         .middle-section {
             background-color: #3d468f; 
-            padding: 12px;
+            padding: 15px;
         }
 
         .social a { 
@@ -86,7 +81,7 @@
             text-decoration: none;
             transition: all 0.3s ease;
             display: inline-block;
-            margin: 0 20px;
+            margin: 0 25px;
         }
         
         .social a:hover { 
@@ -97,7 +92,7 @@
         /* 下半部介紹區塊 */
         .bottom-section {
             display: flex;
-            padding: 40px;
+            padding: 50px 40px;
             justify-content: space-around;
             color: #333;
             background-color: #fff;
@@ -105,12 +100,12 @@
 
         .bottom-section > div { 
             flex: 1; 
-            padding: 0 20px; 
+            padding: 0 25px; 
         }
 
         .bottom-section strong {
             display: inline-block;
-            font-size: 18px;
+            font-size: 19px;
             margin-bottom: 15px;
             color: #2c3e50;
             border-bottom: 3px solid #6a76d4;
@@ -120,10 +115,81 @@
         .bottom-section span { 
             display: block; 
             color: #555; 
-            line-height: 1.8;
-            font-size: 14px; 
+            line-height: 1.9;
+            font-size: 14.5px; 
             text-align: justify;
         }
 
         .target-company {
-            font-size: 18
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* 中間垂直分隔線 */
+        .border {
+            width: 1px;
+            background-color: #eeeeee;
+            flex: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* 手機版自動適應佈局 */
+        @media (max-width: 650px) {
+            .bottom-section { flex-direction: column; padding: 30px; }
+            .border { width: 80%; height: 1px; margin: 30px auto; }
+            .bottom-section > div { padding: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <div class="top-section">
+            <img src="elon.jpg" alt="張宇宸 個人照">
+            <div class="name">張宇宸</div>
+            <div class="contact-info"><i class="fas fa-envelope"></i> smallfish0902@gmail.com</div>
+            <div class="contact-info"><i class="fas fa-mobile-alt"></i> +886 968 259 990</div>
+        </div>
+
+        <div class="middle-section">
+            <div class="social">
+                <a href="https://www.facebook.com/profile.php?id=100025976374728" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/yuchen09_18/" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <div>
+                <strong>關於我</strong>
+                <span>
+                    您好，我是宇宸！簡單來說，我是一個「愛挑戰」的人。
+                    雖然我現在讀企管，但我高中是讀資處的，所以電腦操作對我來說非常簡單。
+                    
+                    我平常除了打工，剩下的時間我最喜歡研究股票投資。我覺得錢要真的投進去，才會對金融市場有感覺，所以我不只是讀課本，更喜歡實戰！
+                    
+                    我有資處的硬實力、企管的腦袋，還有服務業的溫度，來台新實習我一定能超快上手！
+                </span>
+            </div>
+            
+            <div class="border"></div>
+            
+            <div>
+                <strong>應徵目標</strong>
+                <span class="target-company">台新銀行</span>
+                <span>擁有資處硬實力與企管軟實力的『跨領域行動派』，具備第一線服務溫度與極佳的數位適應力。</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
