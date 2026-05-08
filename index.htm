@@ -94,3 +94,70 @@
 
         .section-box strong {
             display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            border-left: 4px solid #6a76d4;
+            padding-left: 10px;
+        }
+
+        .section-box span { 
+            display: block; 
+            color: #555; 
+            line-height: 1.8;
+            font-size: 14.5px; 
+            text-align: justify;
+        }
+
+        .target-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4a54a4;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* RWD 手機版調整 */
+        @media (max-width: 650px) {
+            .bottom-section { flex-direction: column; padding: 30px; }
+            .section-box { margin-bottom: 30px; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <div class="top-section">
+            <img src="elon.jpg" alt="張宇宸">
+            <div class="name">張宇宸</div>
+            <div class="contact-info"><i class="fas fa-envelope"></i> smallfish0902@gmail.com</div>
+            <div class="contact-info"><i class="fas fa-mobile-alt"></i> +886 968 259 990</div>
+        </div>
+
+        <div class="middle-section">
+            <div class="social">
+                <a href="https://www.facebook.com/profile.php?id=100025976374728" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/yuchen09_18/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+
+        <div class="bottom-section">
+            <div class="section-box">
+                <strong>關於我</strong>
+                <span>
+                    您好，我是宇宸！我是一個「愛挑戰」的人。雖然目前讀企管，但我高中是資處科背景，電腦操作對我來說非常簡單。
+                    平時我最喜歡研究股票投資，比起只讀課本，我更喜歡將資金投入市場實戰，對金融市場有敏銳的觀察力與執行力。
+                </span>
+            </div>
+            
+            <div class="section-box">
+                <strong>應徵目標</strong>
+                <span class="target-title">台新銀行</span>
+                <span>具備資處硬實力與企管軟實力，擁有服務業的溫度與極佳的數位適應力，是能快速上手的跨領域行動派，期待在台新貢獻所長。</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
