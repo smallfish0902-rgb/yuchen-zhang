@@ -15,9 +15,16 @@
         body {
             margin: 0;
             padding: 0;
-            /* 背景圖已更新為 下載.png*/
-            background-image: url('下載.png'); 
-            background-size: cover;
+            /* 背景圖設定為 下載.jpg */
+            background-image: url('下載.jpg'); 
+            
+            /* 解決圖片太大的問題：
+               1. auto: 維持圖片原始比例大小 
+               2. repeat: 讓圖片重複鋪滿背景，避免單張圖被過度拉伸
+            */
+            background-size: auto; 
+            background-repeat: repeat; 
+            
             background-position: center;
             background-attachment: fixed;
             background-color: #2c3e50; /* 圖片載入前的預設深色 */
@@ -38,6 +45,7 @@
             overflow: hidden;
             border-radius: 16px;
             animation: fadeIn 0.8s ease-out;
+            position: relative; /* 確保在背景之上 */
         }
 
         @keyframes fadeIn {
@@ -173,12 +181,12 @@
             <div>
                 <strong>關於我</strong>
                 <span>
-                   您好，我是宇宸！簡單來說，我是一個 愛挑戰 的人。
-雖然我現在讀企管，但我高中是讀資處的，所以電腦操作對我來說非常簡單。
-
-我平常除了打工，剩下的時間我最喜歡研究股票投資。我覺得錢要真的投進去，才會對金融市場有感覺，所以我不只是讀課本，更喜歡實戰！
-
-我有資處的硬實力、企管的腦袋，還有服務業的溫度，來台新實習我一定能超快上手！
+                    您好，我是宇宸！簡單來說，我是一個「愛挑戰」的人。
+                    雖然我現在讀企管，但我高中是讀資處的，所以電腦操作對我來說非常簡單。
+                    
+                    我平常除了打工，剩下的時間我最喜歡研究股票投資。我覺得錢要真的投進去，才會對金融市場有感覺，所以我不只是讀課本，更喜歡實戰！
+                    
+                    我有資處的硬實力、企管的腦袋，還有服務業的溫度，來台新實習我一定能超快上手！
                 </span>
             </div>
             
