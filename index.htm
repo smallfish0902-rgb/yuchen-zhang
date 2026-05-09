@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* 全域樣式設定 */
         * {
             box-sizing: border-box;
         }
@@ -15,12 +14,16 @@
         body {
             margin: 0;
             padding: 0;
-            /* 背景圖已更新為 下載.jpg */
-            background-image: url('下載.jpg'); 
-            background-size: cover;
+            /* 1. 確認檔案名稱必須完全符合 bg.png */
+            background-image: url('bg.png'); 
+            
+            /* 2. 讓背景圖縮小 (例如 200px)，並重複鋪滿 */
+            background-size: 200px; 
+            background-repeat: repeat; 
+            
             background-position: center;
             background-attachment: fixed;
-            background-color: #2c3e50; /* 圖片載入前的預設深色 */
+            background-color: #2c3e50; 
             font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
             display: flex;
             justify-content: center;
@@ -28,7 +31,6 @@
             min-height: 100vh;
         }
 
-        /* 中央白色卡片主體 */
         .main-content {
             background-color: white;
             width: 90%;
@@ -38,6 +40,7 @@
             overflow: hidden;
             border-radius: 16px;
             animation: fadeIn 0.8s ease-out;
+            position: relative;
         }
 
         @keyframes fadeIn {
@@ -45,7 +48,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 上半部漸層區塊 */
         .top-section {
             background: linear-gradient(135deg, #6a76d4, #4a54a4); 
             padding: 50px 20px;
@@ -63,10 +65,9 @@
         }
 
         .name { font-size: 30px; font-weight: bold; margin: 10px 0; letter-spacing: 3px; }
-        .contact-info { font-size: 15px; margin: 6px 0; opacity: 0.9; letter-spacing: 0.5px; }
+        .contact-info { font-size: 15px; margin: 6px 0; opacity: 0.9; }
         .contact-info i { margin-right: 8px; width: 18px; }
 
-        /* 中間深色社群列 */
         .middle-section {
             background-color: #3d468f; 
             padding: 15px;
@@ -86,12 +87,10 @@
             color: #ffda79;
         }
 
-        /* 下半部介紹區塊 */
         .bottom-section {
             display: flex;
             padding: 45px 40px;
             justify-content: space-around;
-            align-items: stretch;
             color: #333;
             background-color: #fff;
         }
@@ -126,7 +125,6 @@
             display: block;
         }
 
-        /* 中間垂直分隔線 */
         .border {
             width: 1px;
             background-color: #eeeeee;
@@ -134,12 +132,10 @@
             padding: 0 !important;
         }
 
-        /* 手機版自動適應佈局 */
         @media (max-width: 650px) {
             .bottom-section { flex-direction: column; align-items: center; padding: 30px; }
             .border { width: 70%; height: 1px; margin: 30px 0; }
             .bottom-section > div { padding: 0; width: 100%; }
-            .social a { margin: 0 15px; }
         }
     </style>
 </head>
@@ -147,7 +143,8 @@
 
     <div class="main-content">
         <div class="top-section">
-            <img src="elon.jpg" alt="張宇宸 個人照">
+            <!-- 確認個人頭像檔名是否正確 -->
+            <img src="elon.jpg" alt="張宇宸">
             <div class="name">張宇宸</div>
             <div class="contact-info"><i class="fas fa-envelope"></i> smallfish0902@gmail.com</div>
             <div class="contact-info"><i class="fas fa-mobile-alt"></i> +886 968 259 990</div>
@@ -155,17 +152,9 @@
 
         <div class="middle-section">
             <div class="social">
-                <a href="https://www.facebook.com/profile.php?id=100025976374728" target="_blank" title="Facebook">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                
-                <a href="https://www.instagram.com/yuchen09_18/" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-
-                <a href="https://github.com/" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
+                <a href="https://www.facebook.com/profile.php?id=100025976374728" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/yuchen09_18/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
             </div>
         </div>
 
@@ -173,12 +162,10 @@
             <div>
                 <strong>關於我</strong>
                 <span>
-                    您好，我是宇宸！簡單來說，我是一個 愛挑戰 的人。
-雖然我現在讀企管，但我高中是讀資處的，所以電腦操作對我來說非常簡單。
-
-我平常除了打工，剩下的時間我最喜歡研究股票投資。我覺得錢要真的投進去，才會對金融市場有感覺，所以我不只是讀課本，更喜歡實戰！
-
-我有資處的硬實力、企管的腦袋，還有服務業的溫度，來台新實習我一定能超快上手！
+                    您好，我是宇宸！簡單來說，我是一個「愛挑戰」的人。
+                    雖然現在讀企管，但我高中是讀資處的，所以電腦操作對我來說非常簡單。
+                    我平常最喜歡研究股票投資，喜歡將資金投入市場實戰，對金融市場有感覺。
+                    我有資處硬實力、企管腦袋與服務業溫度，來台新實習一定能超快上手！
                 </span>
             </div>
             
@@ -186,8 +173,8 @@
             
             <div>
                 <strong>應徵目標</strong>
-                <span class="target-company"> 台新銀行</span>
-                <span>擁有資處硬實力與企管軟實力的『跨領域行動派』，具備第一線服務溫度與極佳的數位適應力。</span>
+                <span class="target-company">台新銀行</span>
+                <span>具備第一線服務溫度與極佳數位適應力的『跨領域行動派』。</span>
             </div>
         </div>
     </div>
