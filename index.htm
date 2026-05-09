@@ -7,24 +7,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
             padding: 0;
-            /* 1. 確認檔案名稱必須完全符合 bg.png */
+            /* 1. 這裡確保檔名與 GitHub 上的 bg.png 完全一致 */
             background-image: url('bg.png'); 
             
-            /* 2. 讓背景圖縮小 (例如 200px)，並重複鋪滿 */
-            background-size: 200px; 
+            /* 2. 背景縮小並重複排列 */
+            background-size: 180px; 
             background-repeat: repeat; 
             
             background-position: center;
             background-attachment: fixed;
             background-color: #2c3e50; 
-            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            font-family: "Microsoft JhengHei", sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -37,10 +35,9 @@
             max-width: 800px;
             box-shadow: 0 25px 60px rgba(0,0,0,0.6);
             text-align: center;
-            overflow: hidden;
             border-radius: 16px;
+            overflow: hidden;
             animation: fadeIn 0.8s ease-out;
-            position: relative;
         }
 
         @keyframes fadeIn {
@@ -55,18 +52,16 @@
         }
 
         .top-section img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%; 
             border: 4px solid rgba(255,255,255,0.3);
             object-fit: cover;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 15px;
         }
 
-        .name { font-size: 30px; font-weight: bold; margin: 10px 0; letter-spacing: 3px; }
-        .contact-info { font-size: 15px; margin: 6px 0; opacity: 0.9; }
-        .contact-info i { margin-right: 8px; width: 18px; }
+        .name { font-size: 32px; font-weight: bold; margin: 10px 0; }
+        .contact-info { font-size: 14px; margin: 5px 0; opacity: 0.9; }
 
         .middle-section {
             background-color: #3d468f; 
@@ -75,67 +70,37 @@
 
         .social a { 
             color: white; 
-            font-size: 26px; 
+            font-size: 24px; 
             text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
             margin: 0 20px;
+            transition: 0.3s;
         }
         
-        .social a:hover { 
-            transform: translateY(-5px);
-            color: #ffda79;
-        }
+        .social a:hover { color: #ffda79; }
 
         .bottom-section {
             display: flex;
-            padding: 45px 40px;
-            justify-content: space-around;
-            color: #333;
+            padding: 40px;
             background-color: #fff;
+            text-align: left;
         }
 
-        .bottom-section > div { 
-            flex: 1; 
-            padding: 0 25px; 
-        }
+        .section-box { flex: 1; padding: 0 20px; }
 
-        .bottom-section strong {
-            display: inline-block;
-            font-size: 19px;
-            margin-bottom: 15px;
-            color: #2c3e50;
-            border-bottom: 3px solid #6a76d4;
-            padding-bottom: 5px;
-        }
-
-        .bottom-section span { 
-            display: block; 
-            color: #555; 
-            line-height: 1.8;
-            font-size: 15px; 
-            text-align: justify;
-        }
-
-        .target-company {
-            font-size: 20px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-top: 12px;
+        .section-box strong {
             display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            border-left: 4px solid #6a76d4;
+            padding-left: 10px;
         }
 
-        .border {
-            width: 1px;
-            background-color: #eeeeee;
-            flex: 0 !important;
-            padding: 0 !important;
-        }
+        .section-box span { color: #555; line-height: 1.7; font-size: 14.5px; }
 
         @media (max-width: 650px) {
-            .bottom-section { flex-direction: column; align-items: center; padding: 30px; }
-            .border { width: 70%; height: 1px; margin: 30px 0; }
-            .bottom-section > div { padding: 0; width: 100%; }
+            .bottom-section { flex-direction: column; }
+            .section-box { margin-bottom: 25px; }
         }
     </style>
 </head>
@@ -143,7 +108,7 @@
 
     <div class="main-content">
         <div class="top-section">
-            <!-- 確認個人頭像檔名是否正確 -->
+            <!-- 這裡會讀取你 GitHub 上的 elon.jpg -->
             <img src="elon.jpg" alt="張宇宸">
             <div class="name">張宇宸</div>
             <div class="contact-info"><i class="fas fa-envelope"></i> smallfish0902@gmail.com</div>
@@ -159,22 +124,17 @@
         </div>
 
         <div class="bottom-section">
-            <div>
+            <div class="section-box">
                 <strong>關於我</strong>
                 <span>
-                    您好，我是宇宸！簡單來說，我是一個「愛挑戰」的人。
-                    雖然現在讀企管，但我高中是讀資處的，所以電腦操作對我來說非常簡單。
-                    我平常最喜歡研究股票投資，喜歡將資金投入市場實戰，對金融市場有感覺。
-                    我有資處硬實力、企管腦袋與服務業溫度，來台新實習一定能超快上手！
+                    我是宇宸！擁有資處科技術背景與企管系邏輯，平時熱衷股票實戰投資。具備服務業溫度與快速上手的適應力。
                 </span>
             </div>
             
-            <div class="border"></div>
-            
-            <div>
+            <div class="section-box">
                 <strong>應徵目標</strong>
-                <span class="target-company">台新銀行</span>
-                <span>具備第一線服務溫度與極佳數位適應力的『跨領域行動派』。</span>
+                <span style="font-weight:bold; color:#4a54a4; display:block;">台新銀行</span>
+                <span>期待在台新銀行發揮跨領域實力。</span>
             </div>
         </div>
     </div>
